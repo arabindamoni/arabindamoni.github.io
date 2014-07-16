@@ -32,12 +32,11 @@ function displayData(){
 	var y = x[0].attributes;
 
 	var datastr = "<table>";
-     datastr +=  "<img src='"+ y[13].nodeValue+"'>";
+     datastr +=  "<iframe id='moviePoster' src='http://ihmage.com/direct/"+ y[17].nodeValue+"'></iframe>";
 	for (var i=0;i<y.length;i++)
 	{
 	  datastr += "<tr>";
-	  datastr += "<td>"+ y[i].nodeName+"</td>";
-         // if(y[i].nodeName == "poster") datastr +=  "<img src='"+ y[i].nodeValue+"'>";
+	  datastr += "<td>"+ y[i].nodeName+"</td>";        
 	  datastr += "<td>"+ y[i].nodeValue+"</td>";
 	  datastr += "</tr>";
 	}
