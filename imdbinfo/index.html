@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="imdb.css">
+<script src="loadxmldoc.js"></script>
+</head>
+<body>
+
+<center>
+<div class="page">
+<div class="inp">
+<input type="text" id="title" placeholder="Movie Title"  onkeypress="searchKeyPress(event);" />
+<button onclick="displayData();" >Search</button>
+</div>
+<div id="result"></div>
+</div>
+</center>
+	<script>
+    function searchKeyPress(e)
+    {		
+        // look for window.event in case event isn't passed in
+        if (typeof e == 'undefined' && window.event) { e = window.event; }
+        if (e.keyCode == 13)
+        {
+            displayData();
+        }
+    }
+    </script>
+</body>
+</html>
