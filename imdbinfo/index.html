@@ -16,17 +16,18 @@
 </head>
 <body>
 
-<center>
 <div class="page">
 <div class="inp">
-<input type="text" id="title" placeholder="Movie Title"  onkeypress="searchKeyPress(event);" />
+<p>Title:<input type="text" id="title" placeholder="Movie Title"  onkeypress="searchKeyPress(event);" />&nbsp <span class="necessary">*</span></p>
+<p>Year Released (optional): <select id="year"></select></p>
+
+
 <button onclick="displayData();" >Search</button>
 </div>
 <div id="result"></div>
 </div>
-</center>
 	<script>
-    function searchKeyPress(e)
+	function searchKeyPress(e)
     {		
         // look for window.event in case event isn't passed in
         if (typeof e == 'undefined' && window.event) { e = window.event; }
@@ -34,7 +35,9 @@
         {
             displayData();
         }
-    }
+    }</script>
+    <script>    	
+    	setSelect();   	
     </script>
 </body>
 </html>

@@ -2,10 +2,10 @@ div.result{
 	background-color: #ffff80;
 }
 
-div.page{
-   font-weight: 1.5;
-   font-size: 20px;
-   max-width: 900px;
+div.page{    
+   max-width: 80%;   
+   margin-left: auto;
+   margin-right: auto;   
 }
 
 div.inp{
@@ -14,7 +14,16 @@ div.inp{
     margin-right: 10px;
     margin-left: 10px;
 	outline: green groove 2px;
-	width: 300px;
+	width: 80%;
+	text-align: center;
+}
+
+span.necessary{
+	color: red;
+}
+
+table{	
+	width:80%;
 }
 
 table, td, th {
