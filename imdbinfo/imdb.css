@@ -1,0 +1,31 @@
+div.result{
+	background-color: #ffff80;
+}
+
+div.page{    
+   max-width: 80%;   
+   margin-left: auto;
+   margin-right: auto;   
+}
+
+div.inp{
+	margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+	outline: green groove 2px;
+	width: 80%;
+	text-align: center;
+}
+
+span.necessary{
+	color: red;
+}
+
+table{	
+	width:80%;
+}
+
+table, td, th {
+    border: 1px solid green;	
+}
