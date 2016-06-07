@@ -12,13 +12,13 @@ safe: true
 
 # edit here to achieve your personal greatness
 url: http://arabindamoni.github.io/
-baseurl: /sustain/
+baseurl: /
 title: Arabinda Moni
 author: Arabinda Moni
 description: Personal blog and resume
 avatar: profile.png
 email: yourname@email.com
-github: biomadeira/sustain # username
+github: arabindamoni # username
 twitter: username
 linkedin: username
 stackoverflow: username   #e.g: users/2735833/proton1h1
