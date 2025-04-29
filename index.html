@@ -1,730 +1,384 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Arabinda Moni: Personal Site">
-  <meta name="keywords" content="onepage, resume, CV HTML template, personal Vcard, html resume, free resume template, free HTML template, free bootstrap template, personal portfolio, free html portfolio">
-	<meta name="author" content="http://trendytheme.net/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arabinda Moni - ML Innovator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hack:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'poppins', sans-serif;
+            background-color: #1a1a2e; /* Deep space blue */
+            color: #e0e0e0; /* Light gray for text */
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
 
-	<title>Arabinda Moni</title>
+        .hero-bg {
+            background: linear-gradient(135deg, #16222A 0%, #3A6073 100%); /* Dark blue gradient */
+        }
 
-  <!-- Web Fonts -->
-  <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
-	<!-- Bootstrap core CSS -->
-	<link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-	<!-- Font Awesome CSS -->
-	<link href="assets/css/font-awesome.min.css" rel="stylesheet" media="screen">
-	<!-- Animate css -->
-  <link href="assets/css/animate.css" rel="stylesheet">
-  <!-- Magnific css -->
-	<link href="assets/css/magnific-popup.css" rel="stylesheet">
-	<!-- Custom styles CSS -->
-	<link href="assets/css/style.css" rel="stylesheet" media="screen">
-  <!-- Responsive CSS -->
-  <link href="assets/css/responsive.css" rel="stylesheet">
+        .navbar {
+            background-color: rgba(26, 26, 46, 0.8); /* Semi-transparent deep space blue */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-  <![endif]-->
+        .section-card {
+            background-color: #2c2c54; /* Darker purple-blue */
+            border-radius: 1rem; /* 16px */
+            padding: 1.5rem 2rem; /* 24px 32px */
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
-  <link rel="shortcut icon" href="assets/images/ico/favicon.png">
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/ico/apple-touch-icon-144-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/ico/apple-touch-icon-114-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/ico/apple-touch-icon-72-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" href="assets/images/ico/apple-touch-icon-57-precomposed.png">
+        .section-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 40px 0 rgba(46, 213, 115, 0.3); /* Neon green glow on hover */
+        }
 
+        .section-title {
+            font-family: 'Roboto Mono', monospace;
+            color: #2ecc71; /* Vibrant green */
+            font-size: 1.875rem; /* 30px */
+            margin-bottom: 1.5rem; /* 24px */
+            text-shadow: 0 0 8px rgba(46, 204, 113, 0.5);
+        }
+
+        .timeline-item-dot {
+            position: absolute;
+            left: -31px; /* Adjust to center with line */
+            top: 50%;
+            transform: translateY(-50%);
+            width: 18px;
+            height: 18px;
+            background-color: #2ecc71; /* Vibrant green */
+            border-radius: 50%;
+            border: 3px solid #1a1a2e; /* Body background for a "punch-out" effect */
+            z-index: 1;
+            transition: background-color 0.3s ease;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: -23px; /* Center with the dot */
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background-color: #3e3e6b; /* Muted purple-blue for line */
+            transition: background-color 0.3s ease;
+        }
+        .timeline-entry:hover .timeline-item-dot {
+            background-color: #f1c40f; /* Yellow on hover */
+        }
+        .timeline-entry:hover .timeline-line {
+            background-color: #2ecc71; /* Green on hover */
+        }
+
+
+        .skill-tag {
+            background-color: #3e3e6b; /* Muted purple-blue */
+            color: #2ecc71; /* Vibrant green text */
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem; /* 14px */
+            font-weight: 500; 
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            border: 1px solid #2ecc71;
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.1);
+            background-color: #2ecc71;
+            color: #1a1a2e;
+        }
+
+        .contact-icon {
+            color: #2ecc71; /* Vibrant green */
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .contact-icon:hover {
+            color: #f1c40f; /* Yellow */
+            transform: scale(1.1);
+        }
+
+        .profile-image-container {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid #2ecc71; /* Vibrant green border */
+            box-shadow: 0 0 20px rgba(46, 204, 113, 0.5);
+            margin: 0 auto; /* Center the image */
+        }
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a1a2e;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2ecc71;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #27ae60; /* Darker green */
+        }
+
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
 </head>
+<body class="antialiased">
 
-<body>
-	<!-- Preloader -->
-	<div id="tt-preloader">
-		<div id="pre-status">
-			<div class="preload-placeholder"></div>
-		</div>
-	</div>
-
-	<!-- Home Section -->
-	<section id="home" class="tt-fullHeight" data-stellar-vertical-offset="50" data-stellar-background-ratio="0.2">
-		<div class="intro">
-			<div class="intro-sub">I am Arabinda Moni</div>
-			<h1>Computer <span>Engineer</span></h1>
-			<p>I am pursuing my Masters of Engineering degree in Computer Science from Indian Institute of Science, Bangalore.</p>
-
-      <div class="social-icons">
-        <ul class="list-inline">
-          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-          <li><a href="#"><i class="fa fa-behance"></i></a></li>
-          <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-          <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-        </ul>
-      </div> <!-- /.social-icons -->
-		</div>
-
-		<div class="mouse-icon">
-			<div class="wheel"></div>
-		</div>
-	</section><!-- End Home Section -->
-
-
-
-
-	<!-- Navigation -->
-	<header class="header">
-		<nav class="navbar navbar-custom" role="navigation">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<!-- <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt=""></a> -->
-					<!-- <a class="navbar-brand" href="index.html">Home</a> -->
-				</div>
-
-				<div class="collapse navbar-collapse" id="custom-collapse">
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#home">Home</a></li>
-						<li><a href="#about">About</a></li>
-						<li><a href="#resume">Resume</a></li>
-						<li><a href="#skills">Skills</a></li>
-						<li><a href="#works">Works</a></li>
-						<li><a href="#blog">Blog</a></li>
-            <li><a href="#contact">Contact</a></li>
-					</ul>
-				</div>
-			</div><!-- .container -->
-		</nav>
-	</header><!-- End Navigation -->
-
-
-    <!-- About Section -->
-    <section id="about" class="about-section section-padding">
-      <div class="container">
-        <h2 class="section-title wow fadeInUp">About Me</h2>
-
-        <div class="row">
-
-          <div class="col-md-4 col-md-push-8">
-            <div class="biography">
-              <div class="myphoto">
-                <img src="assets/images/myphoto.jpg" alt="">
-              </div>
-              <ul>
-                <li><strong>Name:</strong> Arabinda Moni</li>
-                <li><strong>Date of birth:</strong> 07 Jan 1992</li>
-                <li><strong>Address:</strong> IISc, Bangalore</li>
-                <li><strong>Nationality:</strong> Indian</li>                
-                <li><strong>Email:</strong> arabindamoni [at] gmail [dot] com</li>
-              </ul>
-            </div>
-          </div> <!-- col-md-4 -->
-
-          <div class="col-md-8 col-md-pull-4">
-            <div class="short-info wow fadeInUp">
-              <h3>Objective</h3>
-              <p>An opportunity to work and upgrade myself, as well as being involved in an organization that believes in gaining a competitive edge and giving back to the community. </p>
-            </div>
-
-            <div class="short-info wow fadeInUp">
-              <h3>What I Do ?</h3>
-              <p>I am pursuing my Masters of Engineering degree in Computer Science from Indian Institute of Science, Bangalore. My research experiences and interests are broadly focused on the following areas:</p> 
-
-              <ul class="list-check">
-                <li>Natural Language Processing</li>
-                <li>Machine Learning</li>
-                <li>Data Science</li>
-                <li>Deep Learning </li>
-                <li>Knowledge Base Population</li>                
-                <li>Question Answering Systems</li>
-                <li>Search Engines</li>                
-                <li>Machine Reading</li>
-              </ul>
-            </div>
-
-<!--             <div class="my-signature">
-              <img src="assets/images/sign.png" alt="">
-            </div>
- -->
-            <div class="download-button">
-              <a class="btn btn-info btn-lg" href="#contact"><i class="fa fa-paper-plane"></i>Send me message</a>
-              <a class="btn btn-primary btn-lg" href="assets/Arabinda_Moni_CV.pdf"><i class="fa fa-download"></i>download my cv</a>
-            </div>
-          </div>
-
-
-        </div> <!-- /.row -->
-      </div> <!-- /.container -->
-    </section><!-- End About Section -->
-
-
-    <!-- Video Section --><!-- 
-    <section id="video" class="video-section">
-      <div class="tf-bg-overlay">
-
-        <div class="container">
-
-          <div class="video-intro">
-             <a class="popup-video" href="https://www.youtube.com/watch?v=LGOjcu0HRec"> <i class="fa fa-play"></i>  </a>
-             <h2>Video Introducing</h2>
-          </div>
-
-        </div>
-
-        <!--/.container-->
-      <!-- </div> --> -->
-      <!--/.overlay-->
-    <!-- </section> -->
-    <!-- /.Video Section -->
-
-
-    <!-- Resume Section -->
-    <section id="resume" class="resume-section section-padding">
-        <div class="container">
-            <h2 class="section-title wow fadeInUp">Resume</h2>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="resume-title">
-                        <h3>Education</h3>
-                    </div>
-                    <div class="resume">
-                        <ul class="timeline">
-                            <li>
-                                <div class="posted-date">
-                                    <span class="month">2014-2016</span>
-                                </div><!-- /posted-date -->
-
-                                <div class="timeline-panel wow fadeInUp">
-                                    <div class="timeline-content">
-                                        <div class="timeline-heading">
-                                            <h3>Indian Institute of Science</h3>
-                                            <span>Bangalore</span>
-                                                                                        
-                                        </div><!-- /timeline-heading -->
-
-                                        <div class="timeline-body">
-                                            <p>Currently I am pursuing my <b>Master of Engineering</b> degree in Computer Science from Dept. of <b>Computer Science and Automation</b> in Indian Institute of Science, Bangalore. </p>                                            
-                                        </div><!-- /timeline-body -->
-                                    </div> <!-- /timeline-content -->
-                                </div><!-- /timeline-panel -->
-                            </li>
-
-                            <li class="timeline-inverted">
-                                <div class="posted-date">
-                                    <span class="month">2009-2013</span>
-                                </div><!-- /posted-date -->
-
-                                <div class="timeline-panel wow fadeInUp">
-                                    <div class="timeline-content">
-                                        <div class="timeline-heading">
-                                            <h3>Jadavpur University</h3>
-                                            <span>Kolkata</span>
-                                        </div><!-- /timeline-heading -->
-
-                                        <div class="timeline-body">
-                                            <p>I have completed my <b> Bachelor of Engineering </b> in <b>Computer Science</b> from Dept. of Computer Science and Engineering in Jadavpur University.</p>
-                                        </div><!-- /timeline-body -->
-                                    </div> <!-- /timeline-content -->
-                                </div> <!-- /timeline-panel -->
-                            </li>
-                            
-                        </ul>
-                    </div>
+    <nav class="navbar sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 flex-wrap">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-white">
+                        A<span class="text-green-400">M</span> // Portfolio
+                    </a>
                 </div>
-            <!-- </div>/row -->
-</div>
-</section>
-    <section id="resume" class="resume-section section-padding">
-        <div class="container">
-        <!-- <h2 class="section-title wow fadeInUp">Projects</h2> -->
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="resume-title">
-                        <h3>Projects</h3>
-                    </div>
-                    <div class="resume">
-                        <ul class="timeline">
-                            <li >
-                                <div class="posted-date">
-                                  <span class="month">2015-2016</span>
-                                </div><!-- /posted-date -->
 
-                                <div class="timeline-panel wow fadeInUp">
-                                    <div class="timeline-content">
-                                        <div class="timeline-heading">
-                                            <h3>Temporal Micro Reading</h3>
-                                            <span>Supervisor: Dr. Partha Pratim Talukdar, IISc, Bangalore</span>
-                                        </div><!-- /timeline-heading -->
-
-                                        <div class="timeline-body">
-                                            <p>The project is targeted at extracting temporal scope of relations between a pair of named entities using distant supervision from wikipedia corpus.</p>
-                                        </div><!-- /timeline-body -->
-                                    </div> <!-- /timeline-content -->
-                                </div> <!-- /timeline-panel -->
-                            </li>
-
-                            <li class="timeline-inverted">
-                                <div class="posted-date">
-                                  <!-- <span class="month">2015-2016</span> -->
-                                </div><!-- /posted-date -->
-
-                                <div class="timeline-panel wow fadeInUp">
-                                    <div class="timeline-content">
-                                        <div class="timeline-heading">
-                                            <h3>Question Answering System </h3>
-                                            <span>Supervisor: Dr. Partha Pratim Talukdar, IISc, Bangalore</span>
-                                        </div><!-- /timeline-heading -->
-
-                                        <div class="timeline-body">
-                                            <p>Allen institute of artificial intelligence organised an online contest where the goal was to develop an AI system that can beat 8th graders in science MCQ questions. Our team (MALL LAB,IISc) secured 10th position.</p>
-                                            <b><p><a href='https://www.kaggle.com/c/the-allen-ai-science-challenge' target="_blank">link to leaderboard</a></p></b>
-                                        </div><!-- /timeline-body -->
-                                    </div> <!-- /timeline-content -->
-                                </div><!-- /timeline-panel -->
-                            </li>
-
-                            <li >
-                                <div class="posted-date">
-                                  <span class="month">2015</span>
-                                </div><!-- /posted-date -->
-
-                                <div class="timeline-panel wow fadeInUp">
-                                    <div class="timeline-content">
-                                        <div class="timeline-heading">
-                                            <h3>Trending Topic Detection and Automatic Topic Labeling on Twitter </h3>                                            
-                                        </div><!-- /timeline-heading -->
-
-                                        <div class="timeline-body">
-                                            <p>Used Online LDA for trending topic detection and n-gram model (3 grams) for automatic topic labelling</p>                                            
-                                        </div><!-- /timeline-body -->
-                                    </div> <!-- /timeline-content -->
-                                </div><!-- /timeline-panel -->
-                            </li>
-
-                            <li class="timeline-inverted">
-                                <div class="posted-date">
-                                  <span class="month">2012-2013</span>
-                                </div><!-- /posted-date -->
-
-                                <div class="timeline-panel wow fadeInUp">
-                                    <div class="timeline-content">
-                                        <div class="timeline-heading">
-                                            <h3>Information Retrieval </h3>
-                                            <span>Supervisor: Prof. Chandan Mazumdar, Jadavpur University, Kolkata</span>
-                                        </div><!-- /timeline-heading -->
-
-                                        <div class="timeline-body">
-                                            <p>Developed a customized full text search engine for project Bichitra, online Tagore variorum. Till now more than a million search requests have been served.</p>
-                                            <p>This project was awarded the <b> best student project award </b> by TCS in 2013.</p>
-                                            <b><p><a href='http://bichitra.jdvu.ac.in/search/bengali_search_bn.php' target="_blank">link</a></p></b>
-                                        </div><!-- /timeline-body -->
-                                    </div> <!-- /timeline-content -->
-                                </div><!-- /timeline-panel -->
-                            </li>
-                        </ul>
-                    </div>
+                <div class="block md:hidden">
+                    <button id="menuButton" class="text-gray-300 hover:text-green-400 focus:outline-none p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
                 </div>
-            </div><!-- /row -->
-        </div><!-- /.container -->
-    </section><!-- End Resume Section -->
 
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills-section section-padding">
-      <div class="container">
-        <h2 class="section-title wow fadeInUp">Skills</h2>         
-        <!-- <div class="skill-chart text-center">
-        	<p><h3>Programming Languages</h3></p>
-        	</br>
-        	</br>
-        </div> -->
-        
-        <div class="row">        
-          <div class="col-md-6">
-            <div class="skill-progress">
-              <div class="skill-title"><h3>Java</h3></div> 
-              <div class="progress">
-                <div class="progress-bar six-sec-ease-in-out" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" ><span>95%</span>
-                </div>
-              </div><!-- /.progress -->
-            </div><!-- /.skill-progress -->
-
-            <div class="skill-progress">
-              <div class="skill-title"><h3>Python</h3></div> 
-              <div class="progress">
-                <div class="progress-bar six-sec-ease-in-out" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" ><span>95%</span>
-                </div>
-              </div><!-- /.progress -->
-            </div><!-- /.skill-progress -->
-            <div class="skill-progress">
-              <div class="skill-title"><h3>C++</h3></div>  
-              <div class="progress">
-                <div class="progress-bar six-sec-ease-in-out" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" ><span>75%</span>
-                </div>
-              </div><!-- /.progress -->
-            </div><!-- /.skill-progress -->
-          </div><!-- /.col-md-6 -->
-
-          <div class="col-md-6">
-            <div class="skill-progress">
-              <div class="skill-title"><h3>C</h3></div> 
-              <div class="progress">
-                <div class="progress-bar six-sec-ease-in-out" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" ><span>95%</span>
-                </div>
-              </div><!-- /.progress -->
-            </div><!-- /.skill-progress -->
-            <div class="skill-progress">
-              <div class="skill-title"><h3>Unix</h3></div> 
-              <div class="progress">
-                <div class="progress-bar six-sec-ease-in-out" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" ><span>90%</span>
-                </div>
-              </div><!-- /.progress -->
-            </div><!-- /.skill-progress -->
-            <div class="skill-progress">
-              <div class="skill-title"><h3>Hadoop</h3></div>  
-              <div class="progress">
-                <div class="progress-bar six-sec-ease-in-out" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" ><span>70%</span>
-                </div>
-              </div><!-- /.progress -->
-            </div><!-- /.skill-progress -->
-          </div><!-- /.col-md-6 -->
-        </div><!-- /.row -->
-
-        <div class="skill-chart text-center">
-          <h3>More skills</h3>
-        </div>
-          
-        <div class="row more-skill text-center">
-          <div class="col-xs-12 col-sm-4 col-md-2">
-              <div class="chart" data-percent="95" data-color="e74c3c">
-                    <span class="percent"></span>
-                    <div class="chart-text">
-                      <span>HTML\CSS</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-4 col-md-2">
-              <div class="chart" data-percent="70" data-color="2ecc71">
-                    <span class="percent"></span>
-                    <div class="chart-text">
-                      <span>JavaScript</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-4 col-md-2">
-              <div class="chart" data-percent="80" data-color="3498db">
-                    <span class="percent"></span>
-                    <div class="chart-text">
-                      <span>Oracle</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-4 col-md-2">
-              <div class="chart" data-percent="85" data-color="3498db">
-                    <span class="percent"></span>
-                    <div class="chart-text">
-                      <span>Theano</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-4 col-md-2">
-              <div class="chart" data-percent="90" data-color="3498db">
-                    <span class="percent"></span>
-                    <div class="chart-text">
-                      <span>CoreNLP</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-4 col-md-2">
-              <div class="chart" data-percent="95" data-color="3498db">
-                    <span class="percent"></span>
-                    <div class="chart-text">
-                      <span>Eclipse</span>
-                    </div>
+                <div id="navLinks" class="hidden w-full md:flex md:items-center md:w-auto md:space-x-6 flex-col md:flex-row items-start md:items-center space-y-3 md:space-y-0 py-3 md:py-0">
+                    <a href="#summary" class="block text-gray-300 hover:text-green-400 px-3 py-2 rounded-md text-sm font-medium transition-colors w-full md:w-auto text-left md:text-center">Summary</a>
+                    <a href="#experience" class="block text-gray-300 hover:text-green-400 px-3 py-2 rounded-md text-sm font-medium transition-colors w-full md:w-auto text-left md:text-center">Experience</a>
+                    <a href="#education" class="block text-gray-300 hover:text-green-400 px-3 py-2 rounded-md text-sm font-medium transition-colors w-full md:w-auto text-left md:text-center">Education</a>
+                    <a href="#skills" class="block text-gray-300 hover:text-green-400 px-3 py-2 rounded-md text-sm font-medium transition-colors w-full md:w-auto text-left md:text-center">Skills</a>
+                    <a href="https://www.linkedin.com/in/your-linkedin-profile-here" target="_blank" rel="noopener noreferrer" class="w-full md:w-auto bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm font-medium transition-colors shadow-md hover:shadow-lg flex items-center justify-center">
+                        <i class="fab fa-linkedin-in mr-2"></i>LinkedIn
+                    </a>
                 </div>
             </div>
         </div>
+    </nav>
 
-      </div><!-- /.container -->
-    </section><!-- End Skills Section -->
-
-
-
-
-
-    <!-- Blog Section -->
-    <section id="blog" class="latest-blog-section section-padding">
-      <div class="container">
-        <h2 class="section-title wow fadeInUp">Latest Post</h2>
-
-        <div class="row">
-          <div class="col-sm-4">
-            <article class="blog-post-wrapper">
-              <div class="figure">    
-                <div class="post-thumbnail">
-                  <a href="http://wowcse.blogspot.in/2014/04/gateway-to-gate.html"><img src="assets/images/blog/success.jpg" class="img-responsive " alt=""></a>
-                </div>
-                  <i class="fa fa-file-photo-o"></i>
-              </div><!-- /.figure -->
-              <header class="entry-header">
-                <div class="post-meta">
-                  <span class="the-category"> 
-                    <a href="http://wowcse.blogspot.in/2014/04/gateway-to-gate.html">GATE</a>
-                  </span>
-                </div>
-                <h2 class="entry-title"><a href="http://wowcse.blogspot.in/2014/04/gateway-to-gate.html" rel="">Gateway to GATE</a></h2>
-                <hr>
-                <div class="entry-meta">
-                  <ul class="list-inline">
-                    <li>
-                      <span class="the-author">
-                        <a href="#">Admin</a> 
-                      </span>
-                    </li>
-                    <li>
-                      <span class="the-time">
-                        <a href="#">10 Apr 2014</a>
-                      </span>
-                    </li>
-                    <li>
-                      <span class="the-share">
-                        <a href="#" title="share">50</a>
-                      </span>
-                    </li>
-                    <li>
-                      <span class="the-comments">
-                        <a href="#" title="">29</a>
-                      </span>
-                    </li>
-                  </ul>
-                </div><!-- .entry-meta -->
-              </header><!-- .entry-header -->
-            </article>
-          </div><!-- /.col-sm-4 -->
-          <div class="col-sm-4">
-            <article class="blog-post-wrapper">
-              <div class="figure">    
-                <div class="post-thumbnail">
-                  <a href="http://wowcse.blogspot.in/2014/03/gate-study-materials.html"><img src="assets/images/blog/books.jpg" class="img-responsive " alt=""></a>
-                </div>
-                  <i class="fa fa-file-video-o"></i>
-              </div><!-- /.figure -->
-              <header class="entry-header">
-                <div class="post-meta">
-                  <span class="the-category"> 
-                    <a href="http://wowcse.blogspot.in/2014/03/gate-study-materials.html">GATE</a> 
-                  </span>
-                </div>
-                <h2 class="entry-title"><a href="http://wowcse.blogspot.in/2014/03/gate-study-materials.html" rel="">GATE study materials</a></h2>
-                <hr>
-                <div class="entry-meta">
-                  <ul class="list-inline">
-                    <li>
-                      <span class="the-author">
-                        <a href="#">Admin</a> 
-                      </span>
-                    </li>
-                    <li>
-                      <span class="the-time">
-                        <a href="#">01 Apr 2014</a>
-                      </span>
-                    </li>
-                    <li>
-                      <span class="the-share">
-                        <a href="#" title="share">30</a>
-                      </span>
-                    </li>
-                    <li>
-                      <span class="the-comments">
-                        <a href="#" title="">21</a>
-                      </span>
-                    </li>
-                  </ul>
-                </div><!-- .entry-meta -->
-              </header><!-- .entry-header -->
-            </article>
-          </div><!-- /.col-sm-4 -->
-          <div class="col-sm-4">
-            <article class="blog-post-wrapper">
-              <div class="figure">    
-                <div class="post-thumbnail">
-                  <a href="http://wowcse.blogspot.in/2014/03/gate-study-materials.html"><img src="assets/images/blog/java.jpg" class="img-responsive " alt=""></a>
-                </div>
-                  <i class="fa fa-file-video-o"></i>
-              </div><!-- /.figure -->
-              <header class="entry-header">
-                <div class="post-meta">
-                  <span class="the-category"> 
-                    <a href="http://wowcse.blogspot.in/2013/08/resize-image-in-java.html">JAVA</a> 
-                  </span>
-                </div>
-                <h2 class="entry-title"><a href="http://wowcse.blogspot.in/2013/08/resize-image-in-java.html" rel="">How to resize images in Java</a></h2>
-                <hr>
-                <div class="entry-meta">
-                  <ul class="list-inline">
-                    <li>
-                      <span class="the-author">
-                        <a href="#">Admin</a> 
-                      </span>
-                    </li>
-                    <li>
-                      <span class="the-time">
-                        <a href="#">05 Aug 2013</a>
-                      </span>
-                    </li>
-                    <li>
-                      <span class="the-share">
-                        <a href="#" title="share">3</a>
-                      </span>
-                    </li>
-                    <li>
-                      <span class="the-comments">
-                        <a href="#" title="">2</a>
-                      </span>
-                    </li>
-                  </ul>
-                </div><!-- .entry-meta -->
-              </header><!-- .entry-header -->
-            </article>
-          </div><!-- /.col-sm-4 -->
-        
-        <!-- <div class="blog-more text-center">
-          <a href="#" class="btn btn-primary">View More</a>
-        </div> -->
-        
-      </div><!-- /.container -->
-    </section><!-- End Blog Section -->
-
-
-    <!-- Hire Section -->
-    <section class="hire-section text-center" data-stellar-vertical-offset="50" data-stellar-background-ratio="0.2">
-      <div class="hire-section-bg">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <!-- <h2>I'm available for freelance project</h2> -->
-              <!-- <a href="#" class="btn btn-default">Get Hired</a> -->
-
-	       </div><!-- /.col-md-12 -->
-          </div><!-- /.row -->
-        </div><!-- /.container -->
-      </div><!-- /.hire-section-bg -->
-    </section><!-- End Hire Section -->
-
-
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section section-padding">
-      <div class="container">
-        <h2 class="section-title wow fadeInUp">Get in touch</h2>
-
-        <div class="row">
-          <div class="col-md-6">
-            <div class="contact-form">
-              <strong>Send me a message</strong>
-              <form name="contact-form" id="contactForm" action="sendemail.php" method="POST">
-
-                <div class="form-group">
-                  <label for="name">Name</label>
-                  <input type="text" name="name" class="form-control" id="name" required="">
-                </div>
-
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="email" name="email" class="form-control" id="email" required="">
-                </div>
-
-                <div class="form-group">
-                  <label for="subject">Subject</label>
-                  <input type="text" name="subject" class="form-control" id="subject">
-                </div>
-
-                <div class="form-group">
-                  <label for="message">Message</label>
-                  <textarea name="message" class="form-control" id="message" rows="5" required=""></textarea>
-                </div>
-
-                <button type="submit" name="submit" class="btn btn-primary">Send Message</button>
-              </form>
-            </div><!-- /.contact-form -->
-          </div><!-- /.col-md-6 -->
-
-          <div class="col-md-6">
-            <div class="row center-xs">
-              <div class="col-sm-6">
-                <i class="fa fa-map-marker"></i>
-                <address>
-                  <strong>Address/Street</strong>
-                  IISc<br>
-                  Bangalore, India<br>
-                </address>
-              </div>
-
-              <div class="col-sm-6">
-                <i class="fa fa-mobile"></i>
-                <div class="contact-number">
-                  <strong>Phone Number</strong>
-                  NA<br>
-                  
-                </div>
-              </div>
+    <header class="hero-bg py-16 md:py-24 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
             </div>
-
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="location-map">
-                <div id="mapCanvas" class="map-canvas"></div>
-              </div>
+        <div class="container mx-auto max-w-5xl text-center px-6 relative z-10">
+            <div class="profile-image-container mb-8">
+                <img src="https://media.licdn.com/dms/image/v2/C5603AQGgwfsL-5nxiQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1659012247519?e=1751500800&v=beta&t=ywvMBxFKxMW7CbEV6OiTMOd0OuGdzOTNzFuDb2FAmNU" alt="Arabinda Moni" class="profile-image" onerror="this.onerror=null; this.src='https://placehold.co/300x300/2c2c54/e0e0e0?text=Profile+Pic';">
             </div>
-          </div>
-
-          </div>
-        </div><!-- /.row -->
-      </div><!-- /.container -->
-    </section><!-- End Contact Section -->
-
-
-	<!-- Footer Section -->
-    <footer class="footer-wrapper">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="copyright text-center">
-              <p>&copy; Arabinda Moni | Template adapted from <a href="http://trendytheme.net/">trendytheme.net</a> </p>
+            <h1 class="text-5xl md:text-6xl font-bold tracking-tight leading-tight">
+                Arabinda <span class="text-green-400">Moni</span>
+            </h1>
+            <p class="mt-4 text-2xl md:text-3xl font-light text-gray-300">
+                Lead Machine Learning Engineer & Innovator
+            </p>
+            <div class="mt-10 flex justify-center items-center space-x-6 text-gray-300" id="contact">
+                <div class="flex items-center">
+                    <i class="fas fa-map-marker-alt text-2xl contact-icon mr-2"></i>
+                    <span>Hyderabad, India</span>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </footer><!-- End Footer Section -->
+    </header>
+
+    <main class="container mx-auto max-w-5xl p-6 md:p-8 space-y-12 md:space-y-16 mt-8">
+
+        <section id="summary" class="section-card fade-in-section">
+            <h2 class="section-title flex items-center">
+                <i class="fas fa-atom fa-fw mr-3"></i> // Summary
+            </h2>
+            <p class="text-gray-300 leading-relaxed text-lg">
+                Highly skilled Machine Learning Engineer with a decade of pioneering experience. Proven ability in architecting and deploying global-scale, end-to-end ML systems, grounded in a robust theoretical understanding. Passionate about leveraging AI to solve complex problems and drive innovation.
+            </p>
+        </section>
+
+        <section id="experience" class="section-card fade-in-section">
+            <h2 class="section-title flex items-center">
+                <i class="fas fa-rocket fa-fw mr-3"></i> // Professional Experience
+            </h2>
+            <div class="space-y-10 relative">
+                <div class="relative pl-10 timeline-entry">
+                    <div class="timeline-line"></div>
+                    <div class="timeline-item-dot"></div>
+                    <h3 class="text-2xl font-semibold text-green-400 mb-1">Machine Learning Engineer, Lead</h3>
+                    <p class="text-lg text-gray-400">Google | Hyderabad, India</p>
+                    <p class="text-sm text-gray-500 mb-3">July 2020 - Present</p>
+                    <ul class="list-disc list-outside text-gray-300 space-y-2 pl-5 marker:text-green-400">
+                        <li>Spearheaded the design and implementation of core ML infrastructure as a founding member of the Google One Machine Learning team.</li>
+                        <li>Owned and launched multiple high-impact ML targeting and personalization projects, benefiting billions of users worldwide.</li>
+                        <li>Engineered advanced classification models, user clustering algorithms, and contextual bandits to accurately predict user subscription propensity, significantly accelerating growth, boosting engagement, and minimizing churn.</li>
+                    </ul>
+                </div>
+
+                <div class="relative pl-10 timeline-entry">
+                    <div class="timeline-line"></div>
+                    <div class="timeline-item-dot"></div>
+                    <h3 class="text-2xl font-semibold text-green-400 mb-1">Research Engineer, Machine Learning</h3>
+                    <p class="text-lg text-gray-400">Samsung R&D Institute | Bangalore, India</p>
+                    <p class="text-sm text-gray-500 mb-3">June 2016 - July 2020</p>
+                    <ul class="list-disc list-outside text-gray-300 space-y-2 pl-5 marker:text-green-400">
+                        <li>Developed a sophisticated natural language dialogue understanding system.</li>
+                        <li>Architected and implemented a cognitive module for a Social Robot, enabling it to process and interpret audio-visual environmental data using Object Detection, Activity Recognition, and NLU.</li>
+                        <li>Fine-tuned BERT models to create a high-accuracy question-answering system for news articles.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="section-card fade-in-section">
+            <h2 class="section-title flex items-center">
+                <i class="fas fa-graduation-cap fa-fw mr-3"></i> // Education
+            </h2>
+            <div class="space-y-10 relative">
+                <div class="relative pl-10 timeline-entry">
+                    <div class="timeline-line"></div>
+                    <div class="timeline-item-dot"></div>
+                    <h3 class="text-2xl font-semibold text-green-400 mb-1">Master of Engineering in Computer Science</h3>
+                    <p class="text-lg text-gray-400">Indian Institute of Science | Bangalore, India</p>
+                    <p class="text-sm text-gray-500 mb-3">2014 - 2016</p>
+                    <p class="text-gray-300 pl-5">Thesis: "Temporal Scoping of Relational Facts" (NLP Domain) under Dr. Partha Pratim Talukdar (Deepmind, Google).</p>
+                </div>
+
+                <div class="relative pl-10 timeline-entry">
+                     <div class="timeline-item-dot"></div>
+                    <h3 class="text-2xl font-semibold text-green-400 mb-1">Bachelor of Engineering in Computer Science</h3>
+                    <p class="text-lg text-gray-400">Jadavpur University | Kolkata, India</p>
+                    <p class="text-sm text-gray-500">2009 - 2013</p>
+                </div>
+            </div>
+        </section>
+
+         <section id="skills" class="section-card fade-in-section">
+            <h2 class="section-title flex items-center">
+                <i class="fas fa-code-branch fa-fw mr-3"></i> // Core Competencies
+            </h2>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">LLM</span>
+                <span class="skill-tag">Gemini</span>
+                <span class="skill-tag">Machine Learning</span>
+                <span class="skill-tag">Data Science</span>
+                <span class="skill-tag">NLP</span>
+                <span class="skill-tag">Computer Vision</span>
+                <span class="skill-tag">Classification</span>
+                <span class="skill-tag">Clustering</span>
+                <span class="skill-tag">End-to-End ML Systems</span>
+                <span class="skill-tag">Contextual Bandits</span>
+                <span class="skill-tag">BERT</span>
+                <span class="skill-tag">Object Detection</span>
+                <span class="skill-tag">Activity Recognition</span>
+                <span class="skill-tag">ML Infrastructure</span>
+                <span class="skill-tag">Personalization</span>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center p-8 mt-16 border-t border-gray-700">
+        <p class="text-gray-500">&copy; <span id="currentYear"></span> Arabinda Moni. Architecting the Future with AI.</p>
+        <div class="mt-4 space-x-4">
+            </div>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, {
+            rootMargin: '0px',
+            threshold: 0.1 
+        });
+
+        document.querySelectorAll('.fade-in-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Navigation Menu Toggle
+        const menuButton = document.getElementById('menuButton');
+        const navLinks = document.getElementById('navLinks');
+        const menuIcon = menuButton.querySelector('i');
+
+        menuButton.addEventListener('click', () => {
+            navLinks.classList.toggle('hidden'); // Toggles visibility of the nav links
+            // Toggle icon
+            if (navLinks.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-times'); // Change to X
+                menuIcon.classList.add('fa-bars');   // Change back to bars
+            } else {
+                menuIcon.classList.remove('fa-bars');   // Change to bars
+                menuIcon.classList.add('fa-times'); // Change to X
+            }
+        });
+
+        // Smooth scroll for navigation links & close mobile menu on link click
+        document.querySelectorAll('#navLinks a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+
+                // Close mobile menu if open (check if navLinks is not hidden and screen is mobile)
+                if (!navLinks.classList.contains('hidden') && window.innerWidth < 768) { // 768px is Tailwind's md breakpoint
+                    navLinks.classList.add('hidden');
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                }
+            });
+        });
+
+        // Smooth scroll for logo link (if it points to # or a section)
+        // This ensures the logo also smooth scrolls if it's meant to go to the top or a specific section.
+        // If the logo's href="#" is just a placeholder, this part might not be strictly necessary
+        // but it's good practice if it could point to #top or similar.
+        document.querySelector('.navbar a[href="#"]').addEventListener('click', function(e) {
+            // Check if the link is just "#" for top of page
+            if (this.getAttribute('href') === '#') {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                 // Also close mobile menu if open
+                if (!navLinks.classList.contains('hidden') && window.innerWidth < 768) {
+                    navLinks.classList.add('hidden');
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                }
+            }
+        });
 
 
-	<!-- Scroll-up -->
-	<div class="scroll-up">
-		<a href="#home"><i class="fa fa-angle-up"></i></a>
-	</div>
-
-	<!-- Javascript files -->
-	<script src="assets/js/jquery.js"></script>
-	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-  <script src="assets/js/jquery.stellar.min.js"></script>
-	<script src="assets/js/jquery.sticky.js"></script>
-  <script src="assets/js/smoothscroll.js"></script>
-	<script src="assets/js/wow.min.js"></script>
-  <script src="assets/js/jquery.countTo.js"></script>
-  <script src="assets/js/jquery.inview.min.js"></script> 
-  <script src="assets/js/jquery.easypiechart.js"></script>
-  <script src="assets/js/jquery.shuffle.min.js"></script>
-  <script src="assets/js/jquery.magnific-popup.min.js"></script>
-  <script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
-  <script src="assets/js/jquery.fitvids.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
-  <script src="assets/js/scripts.js"></script>
+    </script>
 </body>
 </html>
